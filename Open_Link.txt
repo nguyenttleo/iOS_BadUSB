@@ -1,0 +1,13 @@
+DELAY 1000
+REM Open Safari App
+COMMAND SPACE
+DELAY 300
+STRING Safari
+DELAY 300
+ENTER
+
+REM Enter the Link URL and Visit
+DELAY 1000
+STRING "link address here"
+DELAY 500
+ENTER
