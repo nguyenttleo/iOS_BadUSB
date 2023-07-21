@@ -1,0 +1,27 @@
+DELAY 1000
+REM Open Mail App
+COMMAND SPACE
+DELAY 300
+STRING Mail
+DELAY 300
+ENTER
+
+REM Compose New Email
+DELAY 1000
+COMMAND N
+DELAY 500
+
+REM Enter Recipient Address
+STRING recipient@example.com
+DELAY 500
+TAB
+STRING Subject Line
+DELAY 500
+TAB
+
+REM Enter Email Content
+STRING This is the email content you wish to send automatically.
+DELAY 500
+
+REM Send Email
+COMMAND SHIFT D
