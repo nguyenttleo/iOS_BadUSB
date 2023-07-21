@@ -1,0 +1,47 @@
+DELAY 1000
+REM Open Retailer's Website in Safari
+STRING "website link here"
+DELAY 500
+ENTER
+
+REM Delay to Allow the Website to Load
+DELAY 5000
+
+REM Go to Search Bar
+CTRL F
+DELAY 300
+STRING "name of item"
+DELAY 500
+ENTER
+
+REM Search for the Given Item at the Specified Time
+REM Replace 'HH:MM:SS' with the desired time in 24-hour format (e.g., 08:30:00 for 8:30 AM).
+REM Ensure the time is within the retailer's operating hours.
+DELAY 500
+REM Set the System Clock to the Desired Time
+STRING date "set time to current time"
+DELAY 500
+ENTER
+
+REM Wait for the Specified Time to Trigger the Search
+REM The next lines represent a loop that waits for the specified time.
+LABEL time_check
+REM Get Current Time (Assuming 24-hour format)
+STRING date +%H:%M:%S
+DELAY 100
+ENTER
+DELAY 100
+REM Compare the Current Time with the Desired Time
+REM Replace 'HH:MM:SS' with the same time as set above.
+STRING [ "$TIME" == "HH:MM:SS" ]
+DELAY 100
+ENTER
+DELAY 100
+REM If Time Not Yet Reached, Go Back to the Beginning of the Loop
+GOTO time_check
+
+REM If Time Reached, Execute the Search
+REM Assuming the retailer's website has automatically redirected to search results.
+REM If not, modify the script accordingly based on the website's structure.
+
+REM End of Script
