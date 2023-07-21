@@ -1,0 +1,62 @@
+DELAY 1000
+REM Open Contacts App
+COMMAND SPACE
+DELAY 300
+STRING Contacts
+DELAY 300
+ENTER
+
+REM Accessing Contacts List
+DELAY 2000
+
+REM Scrolling Down to the First Contact
+CTRL DOWNARROW
+DELAY 200
+
+REM Get User Input for the Number of Contacts to Collect
+PRINT "Please enter the number of contacts you want to gather:"
+GETNUMBER num_contacts
+
+REM Preparing to Gather Contact Information
+REM Create an empty variable to store the contact information
+STRING contacts_info=""
+DELAY 200
+
+REM Start Collecting Contact Information
+REPEAT %num_contacts%
+  REM Access Contact Information
+  COMMAND C
+  DELAY 200
+  REM Append the Contact Information to the Variable
+  COMMAND A
+  COMMAND V
+  DELAY 100
+  STRING ","
+  DELAY 200
+  REM Move to the Next Contact
+  CTRL DOWNARROW
+  DELAY 200
+ENDREPEAT
+
+REM Open Notes App
+COMMAND SPACE
+DELAY 300
+STRING Notes
+DELAY 300
+ENTER
+
+REM Create a New Note
+COMMAND N
+DELAY 500
+
+REM Paste the Collected Contact Information into the Note
+COMMAND V
+DELAY 100
+
+REM Save the Note
+COMMAND S
+DELAY 500
+REM Provide a Default Note Name (you can change this later)
+STRING "Contacts Info"
+DELAY 500
+ENTER
