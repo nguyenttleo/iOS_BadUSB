@@ -12,15 +12,15 @@ COMMAND N
 DELAY 500
 
 REM Enter Recipient Address
-STRING recipient@example.com
+STRING "recipient address here"
 DELAY 500
 TAB
-STRING Subject Line
+STRING "subject line here"
 DELAY 500
 TAB
 
 REM Enter Email Content
-STRING This is the email content you wish to send automatically.
+STRING "email content here"
 DELAY 500
 
 REM Send Email
