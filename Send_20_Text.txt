@@ -1,0 +1,25 @@
+DELAY 1000
+REM Open Messages App
+COMMAND SPACE
+DELAY 300
+STRING Messages
+DELAY 300
+ENTER
+
+REM Compose New Message
+DELAY 1000
+COMMAND N
+DELAY 500
+
+REM Enter Recipient Phone Number
+STRING "phone number here"
+DELAY 500
+TAB
+
+REM Enter Message Content and Send
+REPEAT 20
+  STRING "text message content here"
+  DELAY 100
+  COMMAND RETURN
+  DELAY 100
+ENDREPEAT
